@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita</title>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="agendacita.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Agenda tu cita Cul</h1>
+        <img src="Culpj.png" alt="Logo de tu empresa">
+        <p>Por favor, completa el formulario para agendar tu cita.</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="acerca_de.html">Acerca de</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="agendacita.html">Agendar Cita</a>
+    </div>
+
+    <div class="container">
+        <h2>Formulario de Agendar Cita</h2>
+
+        <div class="form-container">
+            <form id="cita-form" action="javascript:void(0);" onsubmit="submitForm()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br><br>
+                
+                <label for="fecha">Fecha de la cita:</label>
+                <input type="date" id="fecha" name="fecha" required><br><br>
+                
+                <label for="mensaje">Mensaje Adicional:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+                
+                <input type="submit" value="Agendar Cita">
+            </form>
+
+            <div class="success-message" id="success-message" style="display: none;">
+                Tu formulario ha sido enviado con éxito.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Aquí podría ir el código para enviar el formulario a través de AJAX
+            // Pero como es solo un ejemplo, simplemente mostraremos el mensaje de éxito
+            document.getElementById("success-message").style.display = "block";
+            document.getElementById("cita-form").reset(); // Resetear el formulario
+            setTimeout(function() {
+                document.getElementById("success-message").style.display = "none";
+            }, 3000); // Ocultar el mensaje después de 3 segundos
+        }
+    </script>
+
+</body>
+</html>
